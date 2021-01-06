@@ -1,0 +1,84 @@
+:root{
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+html{
+  font-family: 'Raleway', sans-serif;
+}
+/* -------------------- ESTILOS PERSONALIZADOS -------------------- */
+body{
+  background-color: var(--very-light-gray);
+  height: 100vh;
+}
+header > .container{
+  justify-content: center;
+  align-items: center;
+}
+.card{
+  box-shadow: 0px 25px 50px 2px rgba(0,0,0,0.13);
+  border-radius: 5px;
+  width: 19rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.card-body > p{
+  font-size: .8rem;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.card:first-child{
+  border-top: thick solid var(--cyan);
+}
+.card:nth-child(2){
+  border-top: thick solid var(--red);
+}
+.card:nth-child(3){
+  border-top: thick solid var(--orange);
+}
+.card:last-child{
+  border-top: thick solid var(--blue);
+}
+@media screen and (min-width: 48rem){
+  .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: '. builder .'
+    'supervisor builder calculator'
+    'supervisor karma calculator'
+    '. karma .';
+  }
+  .card:first-child{
+    grid-area: supervisor;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .card:nth-child(2){
+    grid-area: builder;
+  }
+  .card:nth-child(3){
+    grid-area: karma;
+  }
+  .card:last-child{
+    grid-area: calculator;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+/* -------------------- ATTRIBUTION -------------------- */
+footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.attribution{
+  background-color: var(--very-dark-blue);
+}
